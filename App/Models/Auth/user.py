@@ -39,6 +39,10 @@ class User(db.Model):
         db.session.delete(self)
         db.session.commit()
         
+    def update(self):
+        db.session.add(self)
+        db.session.commit() 
+        
         
 class TokenBlocklist(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
